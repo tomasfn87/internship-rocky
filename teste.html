@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta c{ background-color: }set="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body { margin: 0; }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .div1, .div2, .div3 {
+            margin: 0 auto;
+            display: flex;
+            width: 350px;
+            height: 250px;
+        }
+
+        .div1 { background-color: #f00; }
+        .div2 { background-color: #0f0; } 
+        .div3 { background-color: #00f; }
+
+        @media (max-width: 768px) {
+            .top {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="div1">Div 1</div><!--
+        --><div class="div2">Div 2</div><!--
+        --><div class="div3">Div 3</div>
+    </div>
+    
+</body>
+</html>
