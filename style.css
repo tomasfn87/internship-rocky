@@ -10,14 +10,17 @@ html, body {
 body {
   background-image: url("images/web/bg.png");
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: top center;
+  top: 0;
+  left: 0;
+  background-position-y: -100vh;
   background-size: auto;
-  background-attachment: scroll;
+  background-attachment: local; 
   background-color: #fff;
   max-width: 1920px;
   width: 100vw;
   max-height: 5355px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a:-webkit-any-link {
@@ -104,7 +107,7 @@ header {
     left: 0;
   }
 
-  /* (C) TOGGLE SHOW/HIDE MENU */
+  /* Ativar / desativar o menu */
   #hamitems { display: none; }
   #hamnav { float: none; }
   #hamnav input:checked ~ #hamitems { display: block; }
@@ -349,7 +352,7 @@ footer {
 
 /* Contato, Endereço e texto */
 #footer-data {
-  width: 35vw;
+  width: 33vw;
   height: 32vh;
   color: #fff;
 }
@@ -394,19 +397,18 @@ footer {
 /* Formulário p/ contato */
 #footer-form {
   vertical-align: top;
-  width: 25vw;
   min-height: min-content;
-  height: auto;
+  height: fit-content ;
   background-color: #868686;
-  padding: 20px;
   box-sizing: content-box;
+  width: 33vw;
+  padding: 3vh 2vw;
 }
 
 #footer-form form {
   color: #999;
   font-size: 1.2em;
   height: max-content;
-  padding: .9vh .9vw;
 }
 
 #footer-form input {
@@ -417,10 +419,8 @@ footer {
   padding: 25px;
 }
 
-#footer-form input:first-of-type { margin-bottom: 2vh; }
-#footer-form input:nth-of-type(1), #footer-form input:nth-of-type(2) {
-  margin: 2vh 0;
-}
+#input1 { margin-bottom: 2vh; }
+#input2, #input3 { margin: 2vh 0; }
 
 #footer-form textarea {
   width: 100%;
@@ -573,7 +573,7 @@ footer {
     padding: 0 10vw;
     font-size: 1.2;
     font-weight: 500;
-    line-height: 5vw;
+    line-height: 4.4vw;
   }
 
   .card-diferenciais:nth-of-type(1) {
@@ -601,6 +601,7 @@ footer {
   footer {
     background-color: #ff0;
     max-height: max-content;
+    height: auto;
     padding: 3vh 0;
     width: 100vw;
   }
@@ -608,31 +609,37 @@ footer {
   #footer-content {
     display: block;
     height: auto;
-    padding: 1vh 1vw;
+    padding: 0;
     margin: 0;
-    width: 100vw;
+    width: inherit;
   }
 
     /* 1) Info Rocky */
   #footer-data {
-    display: block;
+    display: inherit;
     margin: 2vh auto;
     width: 58vw;
+    min-width: 300px;
     height: auto;
   }
 
   #footer-data-text { display: none }
   #footer-data-text-mobile { display: block; }
 
-  /* 2) Formulário p/ contato */
+    /* 2) Formulário p/ contato */
   #footer-form {
     display: block;
     height: fit-content;
-    width: 100vw;
+    width: auto;
+  }
+
+  #footer-form form {
+    padding: 2vh 3vw;
+    margin: 0;
   }
 
   #footer-form button {
-    padding: 3vh 0;
+    padding: 3vh 3vw;
     font-size: 1.3em;
   }
 }
@@ -672,25 +679,4 @@ footer {
   .card-diferenciais img {
     height: 10vh;
   }
-
-  /* #footer-content {
-    display: flex;
-    justify-content: space-between;
-    height: max-content;
-    margin: 0 auto;
-    padding: 0 auto;
-    height: auto;
-  }
-
-  #footer-data {
-    height: max-content;
-    width: auto;
-  }
-  #footer-form {
-    height: max-content;
-    width: auto;
-  }
-  #footer-form textarea {
-    height: 14vh;
-  } */
 }
