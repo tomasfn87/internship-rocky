@@ -11,15 +11,12 @@ body {
   background-image: url("images/web/bg.png");
   background-repeat: no-repeat;
   background-position: top left;
-  background-position-y: -100vh;
   background-size: auto;
   background-attachment: scroll;
   background-color: #fff;
   max-width: 1920px;
   width: 100vw;
-  max-height: 1080px;
-  min-height: 100vh;
-  margin: 0 auto;
+  max-height: 5355px;
   overflow-x: hidden;
 }
 
@@ -36,7 +33,7 @@ header {
   height: 100vh;
   background-image: url("images/web/s1 ft1.png");
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top left;
   background-color: #222;
   color: #fff;
 }
@@ -46,21 +43,19 @@ header {
 }
 
 .logo {
-  margin: 2vh 0 0 9vw;
+  margin: 2vh 5vw;
   position: relative;
   display: inline-block;
 }
+.logo:hover { opacity: 65% }
 .logo-mobile { display: none; }
 
-/* [ON BIG SCREENS] */
-/* (A) WRAPPER */
+/* Modo Web */
 #hamnav {
   display: inline-block;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: auto;
-  /* Optional */
-  margin: 30px;
-  position: sticky;
+  margin: 2vh 2vw;
   float: right;
 }
 
@@ -68,40 +63,43 @@ header {
   display: flex;
 }
 
-/* (B) HORIZONTAL MENU ITEMS */
+/* Menu Horizontal */
 #hamitems {
   display: flex;
 }
 
 #hamitems a {
   display: inline-flex;
-  padding: 10px 20px;
+  padding: 1.4vh 1.1vw;
   color: #fff;
   text-decoration: none;
   text-align: center;
+  font-size: 2.4vh;
 }
-#hamitems a:hover { color: #ff0; }
 
-/* (C) HIDE HAMBURGER */
+/* 3) Esconder Hamburguer */
 #hamnav label, #hamburger { display: none; }
+#hamnav label:hover, #hamburger:hover, #hamitems a:hover { opacity: 65%; }
 
-/* [ON SMALL SCREENS] */
-@media screen and (max-width: 600px) {
-  /* (A) BREAK INTO VERTICAL MENU */
+/* Modo retrato */
+@media screen and ( orientation: portrait ) {
+  /* Menu horizontal => Menu vertical */
   #hamitems a {
     display: inline-block;
     width: 100%;
     border-top: 1px solid #333;
+    font-size: 2.3vh;
+    border: auto;
   }
 
-  /* (B) SHOW HAMBURGER ICON */
+  /* (B) Mostrar ícone hamburguer (label) */
   #hamnav label {
-    display: inline;
+    display: block;
     color: #fff;
     font-style: normal;
-    font-size: 3em;
-    padding: 10px;
-    position: absolute;
+    font-size: 6vh;
+    padding: 1vh 3vw;
+    position: relative;
     top: 0;
     left: 0;
   }
@@ -109,19 +107,22 @@ header {
   /* (C) TOGGLE SHOW/HIDE MENU */
   #hamitems { display: none; }
   #hamnav { float: none; }
-  #hamnav input:checked ~ #hamitems { display: block;}
+  #hamnav input:checked ~ #hamitems { display: block; }
   
   .logo { display: none; }
   .logo-mobile {
+    position: absolute;
+    top:5.4vh;
+    left: 40vw;
     display: block;
-    position: relative;
-    margin: -3.5vh auto;
+    margin: 0 auto;
   }
+  .logo-mobile:hover { opacity: 65%; }
 }
 
 #header-content {
   display: block;
-  margin: 28vh auto;
+  margin: 0 auto;
 }
 
 #header-content h1, p {
@@ -130,15 +131,16 @@ header {
 }
 
 #header-content h1 {
-  font-size: 6em;
+  padding: 5vh 0;
+  font-size: 8vw;
   font-weight: 900;
-  line-height: 7vh;
-  letter-spacing: .45vw;
+  line-height: .5vh;
+  letter-spacing: .30vw;
 }
 
 #header-content p {
   font-weight: 300;
-  margin: 12vh 0;
+  padding: 4vh 0;
 }
 
 strong {
@@ -147,22 +149,19 @@ strong {
 }
 
 #contato {
-  padding: 20px;
+  padding: 3vh 5vw;
   background-color:#1cd4e9;
   font-size: .9em;
   color: #fff;
   border-radius: 200px;
   border: none;
 }
-
-#contato:hover {
-  background-color: #ff0;
-  color: #000;
-}
+#contato:hover { opacity: 65%; }
 
 /* Conteúdo */
 
 #content {
+  max-height: max-content;
   height: auto;
   width: 100vw;
   margin: 0 auto;
@@ -174,16 +173,14 @@ strong {
   font-weight: 700;
   color: #000;
   display: block;
-  /* padding: 2.2vh 0 9vh 0; */
   margin: 9vh 0 13vh 0;
 }
 
-/* Section id=content */
+/* Section id="content" */
 
   /* 1) Sobre */
 #sobre {
   height: 100vh;
-  overflow: hidden;
   padding: 0 7vw;
 }
 
@@ -210,7 +207,11 @@ strong {
 #sobre p:nth-of-type(2) { font-weight: 600; }
 
   /* 2) Serviços */
-#servicos { padding: 0 7vw; }
+#servicos {
+  margin: 0 auto;
+  padding: 0 7vw;
+  height: 100vh;
+}
 #servicos-itens { display: flex; }
 
 .card-servicos {
@@ -218,13 +219,10 @@ strong {
   vertical-align: top;
   display: block;
   margin: 1vh auto;
-  max-width: 513px;
-  min-width: 256px;
   width: 24vw;
-  max-height: 647px;
-  min-height: 323px;
-  height: 440px;
-  padding: 1.4vh .5vw;
+  max-height: max-content;
+  height: auto;
+  padding: 1.4vh 3vw;
   border-radius: 25px;
   text-align: center;
   background-position: center;
@@ -288,11 +286,11 @@ strong {
   justify-content: space-between;
   display: block;
   margin: 1vh auto;
-  min-width: 194px;
+  min-width: 167px;
   width: 19vw;
-  min-height: 335px;
-  height: 450px;
-  padding: 20px;
+  min-height: 290px;
+  height: 60vh;
+  padding: 1.4px;
   border-radius: 42px;
   text-align: center;
   background-repeat: no-repeat;
@@ -327,12 +325,12 @@ strong {
 
 .card-diferenciais span {
   padding: 1vh 3vw;
-  font-size: 1em;
+  font-size: .87em;
 }
 
 /* 4) Rodapé */
 footer {
-  padding: 3.5vh 0 4vh 0;
+  padding: 4vh 0 4vh 0;
   height: 100vh;
   width: 100vw;
   background-color: #ff0;
@@ -343,15 +341,16 @@ footer {
   background-color: #222;
   display: flex;
   justify-content: space-between;
-  height: auto;
+  width: 100vw;
+  height: 90vh;
+  margin: 0 auto;
   overflow: hidden;
 }
 
 /* Contato, Endereço e texto */
 #footer-data {
-  min-width: 368px;
-  width: 400px;
-  height: 490px;
+  width: 35vw;
+  height: 32vh;
   color: #fff;
 }
 
@@ -359,14 +358,14 @@ footer {
 #footer-data-1 {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0 30px 0;
+  margin: 1vh 0;
 }
 
 /* 2) E-mail e telefone */
 #footer-data-2 {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0 30px 0;
+  margin: 1vh 0;
 }
 #footer-contato:nth-of-type(1) { font-weight: 100; }
 #footer-contato:nth-of-type(2) { font-weight: 300; }
@@ -376,11 +375,11 @@ footer {
   font-size: .7em;
   font-weight: 300;
 }
-.footer-endereco:nth-of-type(2) { padding-left: 25px; }
-.footer-endereco-icon { padding-top: 15px; }
+.footer-endereco:nth-of-type(2) { padding-left: 2vw; }
+.footer-endereco-icon { padding-top: 1vh; }
 
 /* 3) Texto abaixo das informações de contato */
-#footer-data-text, #footer-data-text-mobile { margin: 10px 0; }
+#footer-data-text, #footer-data-text-mobile { margin: 1.2vh auto; }
 
 #footer-data-text p, #footer-data-text-mobile p {
   font-size: .92em;
@@ -395,10 +394,9 @@ footer {
 /* Formulário p/ contato */
 #footer-form {
   vertical-align: top;
-  width: 400px;
-  min-width: 32vw;
-  width: 30vw;
-  min-height: max-content;
+  width: 25vw;
+  min-height: min-content;
+  height: auto;
   background-color: #868686;
   padding: 20px;
   box-sizing: content-box;
@@ -407,6 +405,8 @@ footer {
 #footer-form form {
   color: #999;
   font-size: 1.2em;
+  height: max-content;
+  padding: .9vh .9vw;
 }
 
 #footer-form input {
@@ -417,13 +417,14 @@ footer {
   padding: 25px;
 }
 
-#footer-form input:nth-of-type(1) { margin-bottom: 2vh; }
-#footer-form input:nth-of-type(2) { margin: 2vh 0; }
-#footer-form input:nth-of-type(3) { margin: 2vh 0; }
+#footer-form input:first-of-type { margin-bottom: 2vh; }
+#footer-form input:nth-of-type(1), #footer-form input:nth-of-type(2) {
+  margin: 2vh 0;
+}
 
 #footer-form textarea {
   width: 100%;
-  height: 18vh;
+  height: 16vh;
   margin: 2vh 0;
   font-size: 1.1em;
   font-family: inherit;
@@ -432,7 +433,7 @@ footer {
 }
 
 #footer-form button {
-  padding: 10px 0;
+  padding: 1.2vh 0;
   background-color: #1cd4e9;
   padding: 15px 0;
   width: 100%;
@@ -443,30 +444,28 @@ footer {
 }
 
 #footer-form button:hover { 
-  background-color: #ff0;
-  color: #000;
+  opacity: 65%;
 }
 
 #footer-data, #footer-form {
   display: inline-block;
-  margin: 0 30px;
+  margin: 0 2px;
 }
 
-
-/* Ajustes para versão mobile */
-@media screen and (max-width: 600px) {
+/* Ajustes para Mobile */
+@media screen and ( orientation: portrait ) {
   body { background-image: none; }
   
   /* Cabeçalho */
   header {
     min-height: 100vh;
+    height: max-content;
     background-image: url("images/mobile/s1\ mobile.png");
     background-size: cover;
-    overflow-y: hidden;
   }
   
   #header-content {
-    padding: auto;
+    margin: auto;
   }
   
   #header-content h1 {
@@ -478,6 +477,7 @@ footer {
 
   /* Conteúdo */
   #content {
+    height: max-content;
     margin: 0 auto;
   }
 
@@ -505,7 +505,10 @@ footer {
   }
   
     /* 2) Serviços */
-  #servicos { height: max-content; }
+  #servicos {
+    height: max-content;
+    width: auto;
+  }
 
   #servicos-itens {
     display: block;
@@ -515,14 +518,14 @@ footer {
   .card-servicos {
     margin: 4vh 6vw;
     width: auto;
-    height: 50vh;
+    height: max-content;
     padding: 5vh 0 1.3vh 0;
     border-radius: 44px;
   }
 
   .card-servicos p {
-    font-size: 1.08em;
-    font-weight: 300;
+    font-size: .9em;
+    font-weight: 400;
     line-height: 3vh;
     margin: 0 auto;
     padding: 1.5vh 3.6vw;
@@ -548,7 +551,8 @@ footer {
   
     /* 3) Diferenciais */
   #diferenciais {
-    height: auto;
+    height: max-content;
+    width: auto;
   }
   
   #diferenciais-itens {
@@ -568,7 +572,7 @@ footer {
     margin: .8vh 6vw;
     padding: 0 10vw;
     font-size: 1.2;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 5vw;
   }
 
@@ -596,7 +600,7 @@ footer {
   /* Rodapé */
   footer {
     background-color: #ff0;
-    height: auto;
+    max-height: max-content;
     padding: 3vh 0;
     width: 100vw;
   }
@@ -604,38 +608,89 @@ footer {
   #footer-content {
     display: block;
     height: auto;
-    padding: 0;
+    padding: 1vh 1vw;
     margin: 0;
+    width: 100vw;
   }
 
     /* 1) Info Rocky */
   #footer-data {
-    padding: 1.8vh 16vw 1.5vh 4vw;
-    width: 100vw;
+    display: block;
+    margin: 2vh auto;
+    width: 58vw;
     height: auto;
-  }
-
-  #footer-data p {
-    padding: 2vh 3vw;
   }
 
   #footer-data-text { display: none }
   #footer-data-text-mobile { display: block; }
 
+  /* 2) Formulário p/ contato */
   #footer-form {
     display: block;
-    height: auto;
-    margin: 0;
-  }
-
-    /* 2) Formulário p/ contato */
-  #footer-form {
-    width: inherit;
-    padding: 3.7em;
+    height: fit-content;
+    width: 100vw;
   }
 
   #footer-form button {
-    padding: 30px 0;
-    font-size: 1.4em;
+    padding: 3vh 0;
+    font-size: 1.3em;
   }
+}
+
+/* Portrait / high resolution => ( iPad, iPad Pro ) */
+@media screen and ( orientation: portrait) and ( min-width: 768px ) {
+  header {
+    min-height: 100vh;
+    height: max-content;
+    overflow: hidden;
+  }
+
+  .logo-mobile {
+    position: absolute;
+    top:5.4vh;
+    left: 46vw;
+  }
+
+  #sobre { height: max-content; }
+
+  #sobre, #servicos, #diferenciais {
+    font-size: 2vh;
+  }
+
+  #servicos {
+    padding: 2vh 5vw;
+  }
+
+  .card-servicos {
+    width: 75vw;
+    margin: 3.5vh auto;
+  }
+  .card-servicos h1 {
+    font-size: .93em;
+  }
+
+  .card-diferenciais img {
+    height: 10vh;
+  }
+
+  /* #footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: max-content;
+    margin: 0 auto;
+    padding: 0 auto;
+    height: auto;
+  }
+
+  #footer-data {
+    height: max-content;
+    width: auto;
+  }
+  #footer-form {
+    height: max-content;
+    width: auto;
+  }
+  #footer-form textarea {
+    height: 14vh;
+  } */
 }
