@@ -9,17 +9,14 @@ html, body {
 
 body {
   background-image: url("images/web/bg.png");
-  background-repeat: no-repeat;
-  background-position: top center;
-  top: 0;
-  left: 0;
-  background-position-y: -100vh;
+  background-repeat: repeat-y;
+  background-position: center center;
   background-size: auto;
-  background-attachment: local; 
+  background-attachment: scroll; 
   background-color: #fff;
-  max-width: 1920px;
-  width: 100vw;
   max-height: 5355px;
+  width: 100vw;
+  max-width: 1920px;
   overflow-x: clip;
 }
 
@@ -53,7 +50,12 @@ header {
 .logo:hover { opacity: 65% }
 .logo-mobile { display: none; }
 
-/* Modo Web */
+#header-content {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Menu Web */
 #hamnav {
   display: inline-block;
   justify-content: space-around;
@@ -77,7 +79,7 @@ header {
   color: #fff;
   text-decoration: none;
   text-align: center;
-  font-size: 2.4vh;
+  font-size: 1.4vw;
 }
 
 /* 3) Esconder Hamburguer */
@@ -112,6 +114,7 @@ header {
   #hamnav { float: none; }
   #hamnav input:checked ~ #hamitems { display: block; }
   
+  /* Logotipos => esconder web / mostrar mobile */
   .logo { display: none; }
   .logo-mobile {
     position: absolute;
@@ -121,11 +124,6 @@ header {
     margin: 0 auto;
   }
   .logo-mobile:hover { opacity: 65%; }
-}
-
-#header-content {
-  display: block;
-  margin: 0 auto;
 }
 
 #header-content h1, p {
@@ -375,7 +373,7 @@ footer {
 
 .footer-endereco {
   display: inline;
-  font-size: .7em;
+  font-size: .82em;
   font-weight: 300;
 }
 .footer-endereco:nth-of-type(2) { padding-left: 2vw; }
@@ -385,7 +383,7 @@ footer {
 #footer-data-text, #footer-data-text-mobile { margin: 1.2vh auto; }
 
 #footer-data-text p, #footer-data-text-mobile p {
-  font-size: .92em;
+  font-size: 2vh;
   padding: 2vh 0;
   margin: 0px;
   overflow: hidden;
@@ -453,7 +451,7 @@ footer {
 }
 
 /* Ajustes para Mobile */
-@media screen and ( orientation: portrait ) {
+@media screen and ( orientation: portrait ), screen and ( max-width: 768px ) {
   body { background-image: none; }
   
   /* Cabeçalho */
@@ -646,10 +644,17 @@ footer {
 
 /* Portrait / high resolution => ( iPad, iPad Pro ) */
 @media screen and ( orientation: portrait) and ( min-width: 768px ) {
+  body {
+    background-image: none;
+  }
+
   header {
     min-height: 100vh;
     height: max-content;
-    overflow: hidden;
+  }
+
+  #hamitems a {
+    font-size: 1.4vw;
   }
 
   .logo-mobile {
@@ -678,5 +683,189 @@ footer {
 
   .card-diferenciais img {
     height: 10vh;
+  }
+}
+
+/* Ajuste para modo paisagem em celulares */
+@media screen and ( orientation: landscape ) and ( max-height: 650px ), 
+screen and ( orientation: landscape ) and ( max-width: 415px ) {
+  header { height: max-content;}
+  #header-content {
+    display: block;
+    margin: auto;
+    height: 100vh;
+    max-height: max-content;
+  }
+
+  #hamitems a {
+    font-size: 1.6vw;
+    display: inline-flex;
+    height: min-content;
+    padding: 1.4vh 1.1vw;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  /* Conteúdo */
+  #content {
+    height: max-content;
+    margin: 0 auto;
+  }
+
+  #content h1 {
+    margin: 9vh 0 5vh 5vw;
+  }a
+  
+    /* 1) Sobre */
+  #sobre {
+    height: mx-content;
+    width: auto;
+  }
+
+  .sobre-mobile {
+    width: 80vw;
+    height: max-content;
+    margin: 3vh auto;
+  }
+
+  .sobre { display: none }
+  .sobre-mobile { display: block; }
+  .sobre-mobile:hover {
+    box-shadow: 0 5px 14px 0px rgba(0, 0, 0, .6);
+    opacity: 90%;
+  }
+  
+    /* 2) Serviços */
+  #servicos {
+    height: max-content;
+    width: auto;
+  }
+
+  #servicos-itens {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .card-servicos {
+    margin: 4vh 6vw;
+    width: auto;
+    height: max-content;
+    padding: 5vh 0 1.3vh 0;
+    border-radius: 44px;
+  }
+
+  .card-servicos p {
+    font-size: .9em;
+    font-weight: 400;
+    line-height: 3vh;
+    margin: 0 auto;
+    padding: 1.5vh 3.6vw;
+  }
+
+  .card-servicos h2 { font-size: 1.9em; }
+  .card-servicos h1, { font-size: 1em; margin: .8vh auto; }
+  
+  .card-servicos:nth-of-type(1) {
+    background-image: url("images/mobile/s3\ ft1.png");
+  }
+  
+  .card-servicos:nth-of-type(2) {
+    background-image: url("images/mobile/s3\ ft2.png");
+  }
+  
+  .card-servicos:nth-of-type(3) { 
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ), url("images/mobile/s3\ ft3.png");
+  }
+  
+    /* 3) Diferenciais */
+  #diferenciais {
+    height: max-content;
+    width: auto;
+  }
+  
+  #diferenciais-itens {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .card-diferenciais {
+    margin: 4vh 6vw;
+    width: auto;
+    height: fit-content;
+    padding: 5vh 0 1vh 0;
+    border-radius: 70px;
+  }
+  
+  .card-diferenciais p {
+    margin: .8vh 6vw;
+    padding: 0 10vw;
+    font-size: 1.2;
+    font-weight: 500;
+    line-height: 4.4vw;
+  }
+
+  .card-diferenciais:nth-of-type(1) {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ), url("images/mobile/s4\ ft1.png");
+  }
+  
+  .card-diferenciais:nth-of-type(2) {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ), url("images/mobile/s4\ ft2.png"); 
+  }
+  
+  .card-diferenciais:nth-of-type(3) {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ), url("images/mobile/s4\ ft3.png");
+  }
+}
+
+/* Ajuste para iPad Pro em modo Paisagem */
+@media screen and ( orientation: landscape ) and ( min-width: 1366px ) {
+  /* body {
+    top: 0;
+    left: 0;
+    background-position-y: auto;
+    background-size: contain;
+    background-attachment: local; 
+    background-position: absolute;
+    background-color: #fff;
+    background-image: none;
+  } */
+
+  #hamitems a {
+    font-size: 1vw;
+    display: inline-flex;
+    height: min-content;
+    padding: 1.4vh 1.1vw;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  #sobre, #servicos, #diferenciais {
+    min-height: min-content;
+    height: fit-content;
+    max-height: 100vh;
+  }
+
+  #diferenciais {
+    height: 68vh;
+  }
+
+  .card-diferenciais {
+    vertical-align: top;
+    height: auto;
+    max-height: fit-content;
   }
 }
