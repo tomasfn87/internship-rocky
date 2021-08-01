@@ -9,7 +9,7 @@ html, body {
 
 body {
   background-image: url("images/web/bg.png");
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-position: center center;
   background-size: auto;
   background-attachment: scroll; 
@@ -20,10 +20,7 @@ body {
   overflow-x: clip;
 }
 
-a:-webkit-any-link {
-  text-decoration: none;
-  color: inherit;
-}
+a:-webkit-any-link { text-decoration: none; color: inherit; }
 
 /* Cabeçalho */
 header {
@@ -33,14 +30,13 @@ header {
   height: 100vh;
   background-image: url("images/web/s1 ft1.png");
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: center center;
   background-color: #222;
   color: #fff;
+  overflow-y: hidden;
 }
 
-.topmenu {
-  width: 100vw;
-}
+.topmenu { width: 100vw; }
 
 .logo {
   margin: 2vh 5vw;
@@ -50,12 +46,9 @@ header {
 .logo:hover { opacity: 65% }
 .logo-mobile { display: none; }
 
-#header-content {
-  display: block;
-  margin: 0 auto;
-}
+#header-content { display: block; margin: 0 auto; }
 
-/* Menu Web */
+  /* Menu Web */
 #hamnav {
   display: inline-block;
   justify-content: space-around;
@@ -64,14 +57,8 @@ header {
   float: right;
 }
 
-#hamnav nav {
-  display: flex;
-}
-
-/* Menu Horizontal */
-#hamitems {
-  display: flex;
-}
+#hamnav nav { display: flex; }
+#hamitems { display: flex; }
 
 #hamitems a {
   display: inline-flex;
@@ -88,10 +75,10 @@ header {
 
 /* Modo retrato */
 @media screen and ( orientation: portrait ) {
-  /* Menu horizontal => Menu vertical */
+  /* Passar Menu horizontal para Menu vertical */
   #hamitems a {
     display: inline-block;
-    width: 100%;
+    width: 100vw;
     border-top: 1px solid #333;
     font-size: 2.3vh;
     border: auto;
@@ -160,7 +147,6 @@ strong {
 #contato:hover { opacity: 65%; }
 
 /* Conteúdo */
-
 #content {
   max-height: max-content;
   height: auto;
@@ -178,12 +164,8 @@ strong {
 }
 
 /* Section id="content" */
-
   /* 1) Sobre */
-#sobre {
-  height: 100vh;
-  padding: 0 7vw;
-}
+#sobre { height: 100vh; padding: 0 7vw; }
 
 .sobre, .sobre-mobile {
   min-height: 52vh;
@@ -272,15 +254,9 @@ strong {
   padding: 0 7vw;
 }
 
-#diferenciais img {
-  display: block;
-  margin: 5vh auto;
-}
+#diferenciais img { display: block; margin: 5vh auto; }
 
-#diferenciais-itens {
-  display: flex;
-  margin: 0 auto;
-}
+#diferenciais-itens { display: flex; margin: 0 auto; }
 
 .card-diferenciais {
   vertical-align: top;
@@ -324,12 +300,9 @@ strong {
   ), url("images/web/s4\ ft3.png"); 
 }
 
-.card-diferenciais span {
-  padding: 1vh 3vw;
-  font-size: .87em;
-}
+.card-diferenciais span { padding: 1vh 3vw; font-size: .87em; }
 
-/* 4) Rodapé */
+  /* 4) Rodapé */
 footer {
   padding: 4vh 0 4vh 0;
   height: 100vh;
@@ -348,21 +321,21 @@ footer {
   overflow: hidden;
 }
 
-/* Contato, Endereço e texto */
+    /* Contato, Endereço e texto */
 #footer-data {
   width: 33vw;
   height: 32vh;
   color: #fff;
 }
 
-/* 1) Logotipo Rocky, Facebook e Linkedin */
+      /* 1) Logotipo Rocky, Facebook e Linkedin */
 #footer-data-1 {
   display: flex;
   justify-content: space-between;
   margin: 1vh 0;
 }
 
-/* 2) E-mail e telefone */
+      /* 2) E-mail e telefone */
 #footer-data-2 {
   display: flex;
   justify-content: space-between;
@@ -379,7 +352,7 @@ footer {
 .footer-endereco:nth-of-type(2) { padding-left: 2vw; }
 .footer-endereco-icon { padding-top: 1vh; }
 
-/* 3) Texto abaixo das informações de contato */
+      /* 3) Texto abaixo das informações de contato */
 #footer-data-text, #footer-data-text-mobile { margin: 1.2vh auto; }
 
 #footer-data-text p, #footer-data-text-mobile p {
@@ -392,7 +365,7 @@ footer {
 #blue-text { color: #1cd4e9; font-weight: 600; }
 #footer-data-text-mobile { display: none; }
 
-/* Formulário p/ contato */
+  /* Formulário p/ contato */
 #footer-form {
   vertical-align: top;
   min-height: min-content;
@@ -440,10 +413,7 @@ footer {
   color: #fff;
   margin-top: 2vh;
 }
-
-#footer-form button:hover { 
-  opacity: 65%;
-}
+#footer-form button:hover { opacity: 65%; }
 
 #footer-data, #footer-form {
   display: inline-block;
@@ -456,38 +426,24 @@ footer {
   
   /* Cabeçalho */
   header {
-    min-height: 100vh;
-    height: max-content;
+    height: 100vh;
+    max-height: max-content;
     background-image: url("images/mobile/s1\ mobile.png");
     background-size: cover;
   }
   
-  #header-content {
-    margin: auto;
-  }
+  #header-content { margin: auto;  }
   
-  #header-content h1 {
-    font-size: 10vw;
-  }
-  #header-content p {
-    font-size: 2.4vw;
-  }
+  #header-content h1 {  font-size: 10vw; }
+  #header-content p { font-size: 2.4vw; }
 
-  /* Conteúdo */
-  #content {
-    height: max-content;
-    margin: 0 auto;
-  }
+    /* Conteúdo */
+  #content { height: max-content; margin: 0 auto; }
 
-  #content h1 {
-    margin: 9vh 0 5vh 5vw;
-  }
+  #content h1 { margin: 9vh 0 5vh 5vw; }
   
-    /* 1) Sobre */
-  #sobre {
-    height: max-content;
-    width: auto;
-  }
+      /* 1) Sobre */
+  #sobre { height: max-content; width: auto; }
 
   .sobre-mobile {
     width: 80vw;
@@ -502,16 +458,10 @@ footer {
     opacity: 90%;
   }
   
-    /* 2) Serviços */
-  #servicos {
-    height: max-content;
-    width: auto;
-  }
+      /* 2) Serviços */
+  #servicos { height: max-content; width: auto; }
 
-  #servicos-itens {
-    display: block;
-    margin: 0 auto;
-  }
+  #servicos-itens { display: block; margin: 0 auto; }
   
   .card-servicos {
     margin: 4vh 6vw;
@@ -530,9 +480,8 @@ footer {
   }
 
   .card-servicos h2 { font-size: 1.9em; }
-  .card-servicos h1, { font-size: 1em; margin: .8vh auto; }
   
-  .card-servicos:nth-of-type(1) {
+  .card-servicos:nth-of-type(1) { 
     background-image: url("images/mobile/s3\ ft1.png");
   }
   
@@ -547,16 +496,10 @@ footer {
     ), url("images/mobile/s3\ ft3.png");
   }
   
-    /* 3) Diferenciais */
-  #diferenciais {
-    height: max-content;
-    width: auto;
-  }
+      /* 3) Diferenciais */
+  #diferenciais { height: max-content; width: auto; }
   
-  #diferenciais-itens {
-    display: block;
-    margin: 0 auto;
-  }
+  #diferenciais-itens { display: block; margin: 0 auto; }
 
   .card-diferenciais {
     margin: 4vh 6vw;
@@ -595,7 +538,7 @@ footer {
     ), url("images/mobile/s4\ ft3.png");
   }
   
-  /* Rodapé */
+    /* Rodapé */
   footer {
     background-color: #ff0;
     max-height: max-content;
@@ -612,7 +555,7 @@ footer {
     width: inherit;
   }
 
-    /* 1) Info Rocky */
+      /* 1) Info Rocky */
   #footer-data {
     display: inherit;
     margin: 2vh auto;
@@ -624,72 +567,48 @@ footer {
   #footer-data-text { display: none }
   #footer-data-text-mobile { display: block; }
 
-    /* 2) Formulário p/ contato */
+      /* 2) Formulário p/ contato */
   #footer-form {
     display: block;
     height: fit-content;
     width: auto;
   }
 
-  #footer-form form {
-    padding: 2vh 3vw;
-    margin: 0;
-  }
-
-  #footer-form button {
-    padding: 3vh 3vw;
-    font-size: 1.3em;
-  }
+  #footer-form form { padding: 2vh 3vw; margin: 0; }
+  #footer-form button { padding: 3vh 3vw; font-size: 1.3em; }
 }
 
-/* Portrait / high resolution => ( iPad, iPad Pro ) */
+/* Ajustes modo Portrait / high resolution => ( iPad, iPad Pro ) */
 @media screen and ( orientation: portrait) and ( min-width: 768px ) {
-  body {
-    background-image: none;
-  }
+  body { background-image: none; }
 
-  header {
-    min-height: 100vh;
-    height: max-content;
-  }
+  header { min-height: 100vh; height: max-content; }
 
-  #hamitems a {
-    font-size: 1.4vw;
-  }
 
   .logo-mobile {
     position: absolute;
-    top:5.4vh;
+    top: 5.4vh;
     left: 46vw;
   }
 
   #sobre { height: max-content; }
 
-  #sobre, #servicos, #diferenciais {
-    font-size: 2vh;
-  }
+  #sobre, #servicos, #diferenciais { font-size: 2vh; }
 
-  #servicos {
-    padding: 2vh 5vw;
-  }
+  #servicos { padding: 2vh 5vw; }
 
-  .card-servicos {
-    width: 75vw;
-    margin: 3.5vh auto;
-  }
-  .card-servicos h1 {
-    font-size: .93em;
-  }
+  .card-servicos { width: 75vw; margin: 3.5vh auto; }
+  .card-servicos h1 { font-size: .93em; }
 
-  .card-diferenciais img {
-    height: 10vh;
-  }
+  .card-diferenciais img { height: 10vh; }
 }
 
-/* Ajuste para modo paisagem em celulares */
+/* Ajuste para modo paisagem em smart phones */
 @media screen and ( orientation: landscape ) and ( max-height: 650px ), 
 screen and ( orientation: landscape ) and ( max-width: 415px ) {
+
   header { height: max-content;}
+
   #header-content {
     display: block;
     margin: auto;
@@ -707,21 +626,15 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     text-align: center;
   }
 
-  /* Conteúdo */
+    /* Conteúdo */
   #content {
     height: max-content;
     margin: 0 auto;
   }
-
-  #content h1 {
-    margin: 9vh 0 5vh 5vw;
-  }a
+  #content h1 { margin: 9vh 0 5vh 5vw; }
   
-    /* 1) Sobre */
-  #sobre {
-    height: mx-content;
-    width: auto;
-  }
+      /* 1) Sobre */
+  #sobre { height: mx-content; width: auto; }
 
   .sobre-mobile {
     width: 80vw;
@@ -736,16 +649,9 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     opacity: 90%;
   }
   
-    /* 2) Serviços */
-  #servicos {
-    height: max-content;
-    width: auto;
-  }
-
-  #servicos-itens {
-    display: block;
-    margin: 0 auto;
-  }
+      /* 2) Serviços */
+  #servicos { height: max-content; width: auto; }
+  #servicos-itens { display: block; margin: 0 auto; }
   
   .card-servicos {
     margin: 4vh 6vw;
@@ -764,7 +670,6 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
   }
 
   .card-servicos h2 { font-size: 1.9em; }
-  .card-servicos h1, { font-size: 1em; margin: .8vh auto; }
   
   .card-servicos:nth-of-type(1) {
     background-image: url("images/mobile/s3\ ft1.png");
@@ -781,16 +686,10 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     ), url("images/mobile/s3\ ft3.png");
   }
   
-    /* 3) Diferenciais */
-  #diferenciais {
-    height: max-content;
-    width: auto;
-  }
+      /* 3) Diferenciais */
+  #diferenciais { height: max-content; width: auto; }
   
-  #diferenciais-itens {
-    display: block;
-    margin: 0 auto;
-  }
+  #diferenciais-itens { display: block; margin: 0 auto; }
 
   .card-diferenciais {
     margin: 4vh 6vw;
@@ -832,18 +731,8 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
 
 /* Ajuste para iPad Pro em modo Paisagem */
 @media screen and ( orientation: landscape ) and ( min-width: 1366px ) {
-  /* body {
-    top: 0;
-    left: 0;
-    background-position-y: auto;
-    background-size: contain;
-    background-attachment: local; 
-    background-position: absolute;
-    background-color: #fff;
-    background-image: none;
-  } */
 
-  #hamitems a {
+  #hamitems a { 
     font-size: 1vw;
     display: inline-flex;
     height: min-content;
@@ -859,9 +748,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     max-height: 100vh;
   }
 
-  #diferenciais {
-    height: 68vh;
-  }
+  #diferenciais { height: 68vh; }
 
   .card-diferenciais {
     vertical-align: top;
