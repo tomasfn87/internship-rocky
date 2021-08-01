@@ -84,7 +84,7 @@ header {
     border: auto;
   }
 
-  /* (B) Mostrar ícone hamburguer (label) */
+  /* Mostrar ícone hamburguer (label) */
   #hamnav label {
     display: block;
     color: #fff;
@@ -105,7 +105,7 @@ header {
   .logo { display: none; }
   .logo-mobile {
     position: absolute;
-    top:5.4vh;
+    top: 5.4vh;
     left: 40vw;
     display: block;
     margin: 0 auto;
@@ -138,7 +138,7 @@ strong {
 
 #contato {
   padding: 3vh 5vw;
-  background-color:#1cd4e9;
+  background-color:#21a9b8;
   font-size: .9em;
   color: #fff;
   border-radius: 200px;
@@ -346,7 +346,7 @@ footer {
 
 .footer-endereco {
   display: inline;
-  font-size: .82em;
+  font-size: .9em;
   font-weight: 300;
 }
 .footer-endereco:nth-of-type(2) { padding-left: 2vw; }
@@ -362,7 +362,7 @@ footer {
   overflow: hidden;
 }
 
-#blue-text { color: #1cd4e9; font-weight: 600; }
+#blue-text { color: #21a9b8; font-weight: 600; }
 #footer-data-text-mobile { display: none; }
 
   /* Formulário p/ contato */
@@ -387,7 +387,7 @@ footer {
   height: 1.4em;
   font-size: 1.1em;
   color: #ccc;
-  padding: 25px;
+  padding: 3vh 1vw;
 }
 
 #input1 { margin-bottom: 2vh; }
@@ -400,7 +400,7 @@ footer {
   font-size: 1.1em;
   font-family: inherit;
   color: #ccc;
-  padding: 20px 25px;
+  padding: 2vh 1.5vw;
 }
 
 #footer-form button {
@@ -421,7 +421,7 @@ footer {
 }
 
 /* Ajustes para Mobile */
-@media screen and ( orientation: portrait ), screen and ( max-width: 768px ) {
+@media screen and ( orientation: portrait ), ( max-width: 415px ) {
   body { background-image: none; }
   
   /* Cabeçalho */
@@ -432,19 +432,23 @@ footer {
     background-size: cover;
   }
   
-  #header-content { margin: auto;  }
-  
-  #header-content h1 {  font-size: 10vw; }
-  #header-content p { font-size: 2.4vw; }
+  #header-content { margin: auto; }
+  .logo-mobile {
+    width: 25vw;
+    height: auto;
+    padding-left: 1vw;
+  }
+  #header-content h1 {  font-size: 10.5vw; }
+  #header-content p { font-size: 2.2vw; }
+  #header-content button { font-size: 1.5em;}
+
 
     /* Conteúdo */
   #content { height: max-content; margin: 0 auto; }
-
   #content h1 { margin: 9vh 0 5vh 5vw; }
   
       /* 1) Sobre */
   #sobre { height: max-content; width: auto; }
-
   .sobre-mobile {
     width: 80vw;
     height: max-content;
@@ -460,7 +464,6 @@ footer {
   
       /* 2) Serviços */
   #servicos { height: max-content; width: auto; }
-
   #servicos-itens { display: block; margin: 0 auto; }
   
   .card-servicos {
@@ -549,31 +552,43 @@ footer {
 
   #footer-content {
     display: block;
-    height: auto;
+    height: max-content;
     padding: 0;
     margin: 0;
     width: inherit;
+    font-size: 1.5em;
   }
 
       /* 1) Info Rocky */
   #footer-data {
     display: inherit;
     margin: 2vh auto;
-    width: 58vw;
+    width: 88vw;
     min-width: 300px;
     height: auto;
+    font-size: 1.2em;
   }
 
-  #footer-data-text { display: none }
+  #logo-rocky-footer img { width: 22vw; height: auto; }
+  #logo-fb-footer img { width: 7vw; height: auto; }
+  #logo-linkedin-footer img { width: 7vw; height: auto; }
+  #email-footer img { width: 3.5vw; height: auto; }
+  #phone-footer img { width: 3.5vw; height: auto; }
+  #address-footer img { width: 4.5vw; height: auto; }
+
+  #footer-data-text { display: none; }
   #footer-data-text-mobile { display: block; }
+  #footer-data-text-mobile p { font-size: .5em; }
 
       /* 2) Formulário p/ contato */
   #footer-form {
     display: block;
-    height: fit-content;
+    height: max-content;
     width: auto;
+    font-size: 1.5em;
   }
 
+  #footer-form input { padding: 3vh 2vw; font-size: 1.3em;}
   #footer-form form { padding: 2vh 3vw; margin: 0; }
   #footer-form button { padding: 3vh 3vw; font-size: 1.3em; }
 }
@@ -581,18 +596,15 @@ footer {
 /* Ajustes modo Portrait / high resolution => ( iPad, iPad Pro ) */
 @media screen and ( orientation: portrait) and ( min-width: 768px ) {
   body { background-image: none; }
-
+  
   header { min-height: 100vh; height: max-content; }
-
 
   .logo-mobile {
     position: absolute;
     top: 5.4vh;
-    left: 46vw;
   }
 
   #sobre { height: max-content; }
-
   #sobre, #servicos, #diferenciais { font-size: 2vh; }
 
   #servicos { padding: 2vh 5vw; }
@@ -607,7 +619,7 @@ footer {
 @media screen and ( orientation: landscape ) and ( max-height: 650px ), 
 screen and ( orientation: landscape ) and ( max-width: 415px ) {
 
-  header { height: max-content;}
+  header { height: max-content; }
 
   #header-content {
     display: block;
