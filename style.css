@@ -166,10 +166,10 @@ strong {
 
 /* Section id="content" */
   /* 1) Sobre */
-#sobre { min-height: 100vh; height: max-content; padding: 0 7vw; }
+#sobre { height: 100vh; max-height: max-content; padding: 0 7vw; }
 
 .sobre, .sobre-mobile {
-  min-height: 52vh;
+  min-height: fit-content;
   height: auto;
   width: auto;
   display: block;
@@ -749,7 +749,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
 @media screen and ( orientation: landscape ) and ( min-width: 1366px ) {
 
   #hamitems a { 
-    font-size: 1vw;
+    font-size: 1.4vw;
     display: inline-flex;
     height: min-content;
     padding: 1.4vh 1.1vw;
