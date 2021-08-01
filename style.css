@@ -43,7 +43,7 @@ header {
   position: relative;
   display: inline-block;
 }
-.logo:hover { opacity: 65% }
+.logo:hover { opacity: 75% }
 .logo-mobile { display: none; }
 
 #header-content { display: block; margin: 0 auto; }
@@ -71,7 +71,8 @@ header {
 
 /* 3) Esconder Hamburguer */
 #hamnav label, #hamburger { display: none; }
-#hamnav label:hover, #hamburger:hover, #hamitems a:hover { opacity: 65%; }
+#hamnav label:hover, #hamburger:hover { opacity: 75%; }
+#hamitems a:hover { color: #21a9b8; }
 
 /* Modo retrato */
 @media screen and ( orientation: portrait ) {
@@ -110,7 +111,7 @@ header {
     display: block;
     margin: 0 auto;
   }
-  .logo-mobile:hover { opacity: 65%; }
+  .logo-mobile:hover { opacity: 75%; }
 }
 
 #header-content h1, p {
@@ -144,7 +145,7 @@ strong {
   border-radius: 200px;
   border: none;
 }
-#contato:hover { opacity: 65%; }
+#contato:hover { opacity: 75%; }
 
 /* Conteúdo */
 #content {
@@ -165,7 +166,7 @@ strong {
 
 /* Section id="content" */
   /* 1) Sobre */
-#sobre { height: 100vh; padding: 0 7vw; }
+#sobre { min-height: 100vh; height: max-content; padding: 0 7vw; }
 
 .sobre, .sobre-mobile {
   min-height: 52vh;
@@ -193,7 +194,8 @@ strong {
 #servicos {
   margin: 0 auto;
   padding: 0 7vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: max-content;
 }
 #servicos-itens { display: flex; }
 
@@ -249,7 +251,8 @@ strong {
 
   /* 3) Diferenciais */
 #diferenciais {
-  height: 100vh;
+  min-height: 100vh;
+  height: max-content;
   margin: 0 auto;
   padding: 0 7vw;
 }
@@ -400,7 +403,7 @@ footer {
   font-size: 1.1em;
   font-family: inherit;
   color: #ccc;
-  padding: 2vh 1.5vw;
+  padding: 2vh 1.2vw;
 }
 
 #footer-form button {
@@ -413,7 +416,7 @@ footer {
   color: #fff;
   margin-top: 2vh;
 }
-#footer-form button:hover { opacity: 65%; }
+#footer-form button:hover { opacity: 75%; }
 
 #footer-data, #footer-form {
   display: inline-block;
@@ -500,7 +503,7 @@ footer {
   }
   
       /* 3) Diferenciais */
-  #diferenciais { height: max-content; width: auto; }
+  #diferenciais { min-height: 100vh; height: max-content; width: auto; }
   
   #diferenciais-itens { display: block; margin: 0 auto; }
 
@@ -610,8 +613,10 @@ footer {
   #servicos { padding: 2vh 5vw; font-size: 2em; }
   .card-servicos { width: 75vw; margin: 3.5vh auto; }
   .card-servicos h1 { font-size: .93em; }
-  #diferenciais { font-size: 2.5em;}
+  #diferenciais { font-size: 2.5em; }
   .card-diferenciais img { height: 10vh; }
+
+  #footer-data-text-mobile p { font-size: 1em; }
 }
 
 /* Ajuste para modo paisagem em smart phones */
@@ -645,7 +650,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
   #content h1 { margin: 9vh 0 5vh 5vw; }
   
       /* 1) Sobre */
-  #sobre { height: mx-content; width: auto; }
+  #sobre { height: max-content; width: auto; }
 
   .sobre-mobile {
     width: 80vw;
