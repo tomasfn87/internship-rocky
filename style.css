@@ -26,14 +26,14 @@ a:-webkit-any-link { text-decoration: none; color: inherit; }
 header {
   max-width: 1920px;
   width: 100vw;
-  max-height: 1080px;
+  max-height: max-content;
   height: 100vh;
   background-image: url("images/web/s1 ft1.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #222;
   color: #fff;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .topmenu { width: 100vw; }
