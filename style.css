@@ -1,5 +1,8 @@
 * { box-sizing: border-box; }
 
+/* Sobrescrever formatação de hyperlinks */
+html a { text-decoration: none; color: inherit; }
+
 html, body {
   padding: 0;
   margin: 0;
@@ -789,6 +792,3 @@ and ( max-width: 768px ) {
     max-height: fit-content;
   }
 }
-
-/* Sobrescrever formatação de hyperlinks */
-a, a:-webkit-any-link, a:-moz-any-link { text-decoration: none; color: inherit; }
