@@ -221,7 +221,7 @@ strong {
 
 .card-servicos:hover {
   box-shadow: 0 0px 14px 3px rgba(0, 0, 0, .6);
-  opacity: 90%;
+  opacity: 85%;
 }
 
 .card-servicos:nth-of-type(1) {
@@ -284,7 +284,7 @@ strong {
 
 .card-diferenciais:hover {
   box-shadow: 0 0 14px 3px rgba(0, 0, 0, .6);
-  opacity: 90%;
+  opacity: 85%;
 }
 
 .card-diferenciais:nth-of-type(1) {
@@ -353,7 +353,7 @@ footer {
 
 .footer-endereco {
   display: inline;
-  font-size: small;
+  font-size: 1em;
   font-weight: 300;
 }
 .footer-endereco:nth-of-type(2) { padding-left: 2vw; }
@@ -363,7 +363,7 @@ footer {
 #footer-data-text, #footer-data-text-mobile { margin: 1.2vh auto; }
 
 #footer-data-text p, #footer-data-text-mobile p {
-  font-size: 1.95vh;
+  font-size: 1em;
   padding: 2vh 0;
   margin: 0px;
   overflow: hidden;
@@ -470,7 +470,7 @@ footer {
   .sobre-mobile { display: block; }
   .sobre-mobile:hover {
     box-shadow: 0 5px 14px 0px rgba(0, 0, 0, .6);
-    opacity: 90%;
+    opacity: 85%;
   }
   
       /* 2) Serviços */
@@ -583,13 +583,13 @@ footer {
   #logo-linkedin-footer img { width: 7vw; height: auto; }
   #email-footer img { width: 3.5vw; height: auto; }
   #footer-data-2 { font-size: 2em; }
-  /* .footer-endereco { font-size: .6em; } */
+  .footer-endereco { font-size: 1.6em; }
   .footer-endereco:nth-of-type(2) { margin-left: 2.2vw; }
   #phone-footer img { width: 3.5vw; height: auto; }
   #address-footer img { width: 4.5vw; height: auto; }
 
   #footer-data-text { display: none; }
-  #footer-data-text-mobile { display: block; font-size: .9em; }
+  #footer-data-text-mobile { display: block; font-size: .8em; }
 
       /* 2) Formulário p/ contato */
   #footer-form {
@@ -614,7 +614,7 @@ and ( max-width: 768px ) {
   }
 
   #footer-data-2 { font-size: 1em; }
-  /* .footer-endereco { font-size: 1.5em; } */
+  .footer-endereco { font-size: .8em; }
   #footer-data-text-mobile { font-size: .9em; }
 
   #footer-form form { padding: 2vh 3vw; margin: 0; font-size: 2.4em;}
@@ -623,7 +623,7 @@ and ( max-width: 768px ) {
   #footer-form textarea { font-size: .52em; }
 }  
 
-/* Ajustes modo Portrait / high resolution => ( iPad, iPad Pro ) */
+/* Ajustes modo Portrait / high resolution tablets ( iPad, iPad Pro ) */
 @media screen and ( orientation: portrait) and ( min-width: 768px ) {
   body { background-image: none; }
   
@@ -643,8 +643,8 @@ and ( max-width: 768px ) {
   #diferenciais { font-size: 2.2em; }
   .card-diferenciais img { height: 10vh; }
 
-  #footer-data-text-mobile p { font-size: 1em; }
-  #footer-form textarea { font-size: 1.1em; }
+  #footer-data-text-mobile p { font-size: 1.4em; }
+  #footer-form textarea { font-size: 1.2em; }
 }
 
 /* Ajuste para modo paisagem em smart phones */
@@ -687,11 +687,11 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     margin: 3vh auto;
   }
 
-  .sobre { display: none }
+  .sobre { display: none; }
   .sobre-mobile { display: block; }
   .sobre-mobile:hover {
     box-shadow: 0 5px 14px 0px rgba(0, 0, 0, .6);
-    opacity: 90%;
+    opacity: 85%;
   }
   
       /* 2) Serviços */
@@ -702,8 +702,9 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     margin: 4vh 6vw;
     width: auto;
     height: max-content;
-    padding: 5vh 0 1.3vh 0;
+    padding: 5vh 0 2.5vh 0;
     border-radius: 44px;
+    line-height: 6vw;
   }
 
   .card-servicos p {
@@ -740,7 +741,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     margin: 4vh 6vw;
     width: auto;
     height: fit-content;
-    padding: 5vh 0 1vh 0;
+    padding: 4vh 0 1vh 0;
     border-radius: 70px;
   }
   
@@ -749,7 +750,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     padding: 0 10vw;
     font-size: 1.2;
     font-weight: 500;
-    line-height: 4.4vw;
+    line-height: 3vw;
   }
 
   .card-diferenciais:nth-of-type(1) {
