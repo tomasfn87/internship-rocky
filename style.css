@@ -17,6 +17,7 @@ body {
   max-height: 5355px;
   width: 100vw;
   max-width: 1920px;
+  height: auto;
   overflow-x: clip;
 }
 
@@ -26,14 +27,15 @@ a:-webkit-any-link { text-decoration: none; color: inherit; }
 header {
   max-width: 1920px;
   width: 100vw;
-  max-height: max-content;
+  min-height: min-content;
   height: 100vh;
+  max-height: fit-content;
   background-image: url("images/web/s1 ft1.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #222;
   color: #fff;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .topmenu { width: 100vw; }
@@ -74,7 +76,7 @@ header {
 #hamnav label:hover, #hamburger:hover { opacity: 75%; }
 #hamitems a:hover { color: #21a9b8; }
 
-/* Modo retrato */
+/* Modo Retrato I */
 @media screen and ( orientation: portrait ) {
   /* Passar Menu horizontal para Menu vertical */
   #hamitems a {
@@ -183,7 +185,6 @@ strong {
 
 .sobre:hover {
   box-shadow: 0 5px 14px 0px rgba(0, 0, 0, .6);
-  opacity: 90%;
 }
 
 .sobre-mobile { display: none; }
@@ -207,7 +208,7 @@ strong {
   width: 24vw;
   max-height: max-content;
   height: auto;
-  padding: 1.4vh 3vw;
+  padding: 1.6vh 2.5vw;
   border-radius: 25px;
   text-align: center;
   background-position: center;
@@ -245,14 +246,15 @@ strong {
 
 .card-servicos p {
   margin: 1vh 1vw;
-  padding: 1vh 1.5vw;
+  padding: 1.3vh 1.5vw;
   font-size: 1.07em;
 }
 
   /* 3) Diferenciais */
 #diferenciais {
-  min-height: 100vh;
-  height: max-content;
+  min-height: min-content;
+  height: 100vh;
+  max-height: max-content;
   margin: 0 auto;
   padding: 0 7vw;
 }
@@ -270,7 +272,7 @@ strong {
   width: 19vw;
   min-height: 290px;
   height: 60vh;
-  padding: 1.4px;
+  padding: 1.4vh 2.5vw;
   border-radius: 42px;
   text-align: center;
   background-repeat: no-repeat;
@@ -303,12 +305,14 @@ strong {
   ), url("images/web/s4\ ft3.png"); 
 }
 
-.card-diferenciais span { padding: 1vh 3vw; font-size: .87em; }
+.card-diferenciais span { padding: 1vh 3vw; font-size: .9em; }
 
   /* 4) Rodapé */
 footer {
   padding: 4vh 0 4vh 0;
+  min-height: fit-content;
   height: 100vh;
+  max-height: max-content;
   width: 100vw;
   background-color: #ff0;
 }
@@ -349,7 +353,7 @@ footer {
 
 .footer-endereco {
   display: inline;
-  font-size: .9em;
+  font-size: small;
   font-weight: 300;
 }
 .footer-endereco:nth-of-type(2) { padding-left: 2vw; }
@@ -359,7 +363,7 @@ footer {
 #footer-data-text, #footer-data-text-mobile { margin: 1.2vh auto; }
 
 #footer-data-text p, #footer-data-text-mobile p {
-  font-size: 2vh;
+  font-size: 1.95vh;
   padding: 2vh 0;
   margin: 0px;
   overflow: hidden;
@@ -400,7 +404,7 @@ footer {
   width: 100%;
   height: 16vh;
   margin: 2vh 0;
-  font-size: 1.1em;
+  font-size: 1.15em;
   font-family: inherit;
   color: #ccc;
   padding: 2vh 1.2vw;
@@ -423,19 +427,23 @@ footer {
   margin: 0 2px;
 }
 
-/* Ajustes para Mobile */
-@media screen and ( orientation: portrait ), ( max-width: 415px ) {
+/* Modo Retrato II */
+@media screen and ( orientation: portrait ) {
   body { background-image: none; }
   
   /* Cabeçalho */
   header {
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
     max-height: max-content;
     background-image: url("images/mobile/s1\ mobile.png");
     background-size: cover;
   }
   
-  #header-content { margin: auto; }
+  #header-content {
+    margin: auto;
+  }
+
   .logo-mobile {
     width: 25vw;
     height: auto;
@@ -559,7 +567,6 @@ footer {
     padding: 0;
     margin: 0;
     width: inherit;
-    font-size: 1.5em;
   }
 
       /* 1) Info Rocky */
@@ -569,32 +576,52 @@ footer {
     width: 88vw;
     min-width: 300px;
     height: auto;
-    font-size: 1.2em;
   }
 
   #logo-rocky-footer img { width: 22vw; height: auto; }
   #logo-fb-footer img { width: 7vw; height: auto; }
   #logo-linkedin-footer img { width: 7vw; height: auto; }
   #email-footer img { width: 3.5vw; height: auto; }
+  #footer-data-2 { font-size: 2em; }
+  /* .footer-endereco { font-size: .6em; } */
+  .footer-endereco:nth-of-type(2) { margin-left: 2.2vw; }
   #phone-footer img { width: 3.5vw; height: auto; }
   #address-footer img { width: 4.5vw; height: auto; }
 
   #footer-data-text { display: none; }
-  #footer-data-text-mobile { display: block; }
-  #footer-data-text-mobile p { font-size: .5em; }
+  #footer-data-text-mobile { display: block; font-size: .9em; }
 
       /* 2) Formulário p/ contato */
   #footer-form {
     display: block;
     height: max-content;
     width: auto;
-    font-size: 1.5em;
   }
 
-  #footer-form input { padding: 3vh 2vw; font-size: 1.3em;}
-  #footer-form form { padding: 2vh 3vw; margin: 0; }
-  #footer-form button { padding: 3vh 3vw; font-size: 1.3em; }
+  #footer-form form { padding: 2vh 3vw; margin: 0; font-size: 2.4em;}
+  #footer-form input { padding: 3vh 2vw; }
+  #footer-form button { padding: 3vh 3vw; font-size: 1.2em; }
+  #footer-form textarea { font-size: .52em; }
 }
+
+/* Modo retrato em navegadores */
+@media screen and ( orientation: portrait ) and ( min-width: 500px ) 
+and ( max-width: 768px ) {
+  header {
+    min-height: fit-content;
+    height: 100vh;
+    max-height: max-content;
+  }
+
+  #footer-data-2 { font-size: 1em; }
+  /* .footer-endereco { font-size: 1.5em; } */
+  #footer-data-text-mobile { font-size: .9em; }
+
+  #footer-form form { padding: 2vh 3vw; margin: 0; font-size: 2.4em;}
+  #footer-form input { padding: 3vh 2vw; font-size: .5em; }
+  #footer-form button { padding: 3vh 3vw; font-size: .5em; }
+  #footer-form textarea { font-size: .52em; }
+}  
 
 /* Ajustes modo Portrait / high resolution => ( iPad, iPad Pro ) */
 @media screen and ( orientation: portrait) and ( min-width: 768px ) {
@@ -617,11 +644,13 @@ footer {
   .card-diferenciais img { height: 10vh; }
 
   #footer-data-text-mobile p { font-size: 1em; }
+  #footer-form textarea { font-size: 1.1em; }
 }
 
 /* Ajuste para modo paisagem em smart phones */
 @media screen and ( orientation: landscape ) and ( max-height: 650px ), 
 screen and ( orientation: landscape ) and ( max-width: 415px ) {
+  body { background-image: none; }
 
   header { height: max-content; }
 
@@ -746,7 +775,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
 }
 
 /* Ajuste para iPad Pro em modo Paisagem */
-@media screen and ( orientation: landscape ) and ( min-width: 1366px ) {
+@media screen and ( orientation: landscape ) and ( min-width: 1024px ) {
 
   #hamitems a { 
     font-size: 1.4vw;
@@ -759,12 +788,12 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
   }
 
   #sobre, #servicos, #diferenciais {
-    min-height: min-content;
-    height: fit-content;
+    min-height: fit-content;
+    height: auto;
     max-height: 100vh;
   }
 
-  #diferenciais { height: 68vh; }
+  #diferenciais { margin-bottom: 4vh; }
 
   .card-diferenciais {
     vertical-align: top;
