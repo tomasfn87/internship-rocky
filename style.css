@@ -748,7 +748,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
   .card-diferenciais p {
     margin: .8vh 6vw;
     padding: 0 10vw;
-    font-size: 1.2;
+    font-size: 1.2em;
     font-weight: 500;
     line-height: 3vw;
   }
