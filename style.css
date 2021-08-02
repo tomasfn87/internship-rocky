@@ -572,7 +572,7 @@ footer {
   #email-footer img { width: 3.5vw; height: auto; }
   #footer-data-2 { font-size: 2vh; }
   #phone-footer img { width: 3.5vw; height: auto; }
-  #address-footer img { width: 4.5vw; height: auto; }
+  #footer-endereco-icon { width: 1.8vw; height: auto; }
   #footer-data-text { display: none; }
   #footer-data-text-mobile { display: block; font-size: .8em; }
 
