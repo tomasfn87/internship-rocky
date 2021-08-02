@@ -21,21 +21,18 @@ body {
   overflow-x: clip;
 }
 
-a:-webkit-any-link { text-decoration: none; color: inherit; }
-
 /* Cabeçalho */
 header {
   max-width: 1920px;
   width: 100vw;
-  min-height: min-content;
-  height: 100vh;
-  max-height: fit-content;
+  min-height: 100vh;
+  height: max-content;
   background-image: url("images/web/s1 ft1.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #222;
   color: #fff;
-  overflow: clip;
+  overflow: hidden;
 }
 
 .topmenu { width: 100vw; }
@@ -75,46 +72,6 @@ header {
 #hamnav label, #hamburger { display: none; }
 #hamnav label:hover, #hamburger:hover { opacity: 75%; }
 #hamitems a:hover { color: #21a9b8; }
-
-/* Modo Retrato I */
-@media screen and ( orientation: portrait ) {
-  /* Passar Menu horizontal para Menu vertical */
-  #hamitems a {
-    display: inline-block;
-    width: 100vw;
-    border-top: 1px solid #333;
-    font-size: 2.3vh;
-    border: auto;
-  }
-
-  /* Mostrar ícone hamburguer (label) */
-  #hamnav label {
-    display: block;
-    color: #fff;
-    font-style: normal;
-    font-size: 6vh;
-    padding: 1vh 3vw;
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-
-  /* Ativar / desativar o menu */
-  #hamitems { display: none; }
-  #hamnav { float: none; }
-  #hamnav input:checked ~ #hamitems { display: block; }
-  
-  /* Logotipos => esconder web / mostrar mobile */
-  .logo { display: none; }
-  .logo-mobile {
-    position: absolute;
-    top: 5.4vh;
-    left: 40vw;
-    display: block;
-    margin: 0 auto;
-  }
-  .logo-mobile:hover { opacity: 75%; }
-}
 
 #header-content h1, p {
   color: #fff;
@@ -168,7 +125,7 @@ strong {
 
 /* Section id="content" */
   /* 1) Sobre */
-#sobre { height: 100vh; max-height: max-content; padding: 0 7vw; }
+#sobre { min-height: 100vh; max-height: max-content; padding: 0 7vw; }
 
 .sobre, .sobre-mobile {
   min-height: fit-content;
@@ -221,7 +178,6 @@ strong {
 
 .card-servicos:hover {
   box-shadow: 0 0px 14px 3px rgba(0, 0, 0, .6);
-  opacity: 85%;
 }
 
 .card-servicos:nth-of-type(1) {
@@ -253,10 +209,10 @@ strong {
   /* 3) Diferenciais */
 #diferenciais {
   min-height: min-content;
-  height: 100vh;
+  height: max-content;
   max-height: max-content;
   margin: 0 auto;
-  padding: 0 7vw;
+  padding: 0 7vw 6vh;
 }
 
 #diferenciais img { display: block; margin: 5vh auto; }
@@ -271,7 +227,7 @@ strong {
   min-width: 167px;
   width: 19vw;
   min-height: 290px;
-  height: 60vh;
+  height: fit-content;
   padding: 1.4vh 2.5vw;
   border-radius: 42px;
   text-align: center;
@@ -284,7 +240,6 @@ strong {
 
 .card-diferenciais:hover {
   box-shadow: 0 0 14px 3px rgba(0, 0, 0, .6);
-  opacity: 85%;
 }
 
 .card-diferenciais:nth-of-type(1) {
@@ -351,13 +306,10 @@ footer {
 #footer-contato:nth-of-type(1) { font-weight: 100; }
 #footer-contato:nth-of-type(2) { font-weight: 300; }
 
-.footer-endereco {
-  display: inline;
-  font-size: 1em;
-  font-weight: 300;
-}
-.footer-endereco:nth-of-type(2) { padding-left: 2vw; }
-.footer-endereco-icon { padding-top: 1vh; }
+#footer-endereco-1, #footer-endereco-2 { font-size: .7em; }
+#footer-endereco-1 { display: inline; font-weight: 300; }
+#footer-endereco-2 { text-align: left; padding-left: 2.3vw; font-weight: 300; }
+.footer-endereco-icon { height: 2.3vh; margin-right: 1vw; }
 
       /* 3) Texto abaixo das informações de contato */
 #footer-data-text, #footer-data-text-mobile { margin: 1.2vh auto; }
@@ -366,7 +318,6 @@ footer {
   font-size: 1em;
   padding: 2vh 0;
   margin: 0px;
-  overflow: hidden;
 }
 
 #blue-text { color: #21a9b8; font-weight: 600; }
@@ -412,7 +363,7 @@ footer {
 
 #footer-form button {
   padding: 1.2vh 0;
-  background-color: #1cd4e9;
+  background-color: #21a9b8;
   padding: 15px 0;
   width: 100%;
   font-size: .9em;
@@ -427,7 +378,7 @@ footer {
   margin: 0 2px;
 }
 
-/* Modo Retrato II */
+/* Modo Retrato */
 @media screen and ( orientation: portrait ) {
   body { background-image: none; }
   
@@ -442,6 +393,7 @@ footer {
   
   #header-content {
     margin: auto;
+    height: inherit;
   }
 
   .logo-mobile {
@@ -449,10 +401,46 @@ footer {
     height: auto;
     padding-left: 1vw;
   }
-  #header-content h1 {  font-size: 10.5vw; }
-  #header-content p { font-size: 2.2vw; }
-  #header-content button { font-size: 1.5em;}
 
+  /* Passar Menu horizontal para Menu vertical */
+  #hamitems a {
+    display: inline-block;
+    width: 100vw;
+    border-top: 1px solid #333;
+    font-size: 2.3vh;
+    border: auto;
+  }
+
+  /* Mostrar ícone hamburguer (label) */
+  #hamnav label {
+    display: block;
+    color: #fff;
+    font-style: normal;
+    font-size: 6vh;
+    padding: 1vh 3vw;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  /* Ativar / desativar o menu */
+  #hamitems { display: none; }
+  #hamnav { float: none; }
+  #hamnav input:checked ~ #hamitems { display: block; }
+  
+  /* Logotipos => esconder web / mostrar mobile */
+  .logo { display: none; }
+  .logo-mobile {
+    position: absolute;
+    top: 5.4vh;
+    left: 40vw;
+    display: block;
+    margin: 0 auto;
+  }
+  .logo-mobile:hover { opacity: 75%; }
+  #header-content h1 { font-size: 10.5vw; }
+  #header-content p { font-size: 2.2vw; }
+  #header-content button { font-size: 1.5em; }
 
     /* Conteúdo */
   #content { height: max-content; margin: 0 auto; }
@@ -461,7 +449,7 @@ footer {
       /* 1) Sobre */
   #sobre { height: max-content; width: auto; }
   .sobre-mobile {
-    width: 80vw;
+    width: auto;
     height: max-content;
     margin: 3vh auto;
   }
@@ -470,7 +458,6 @@ footer {
   .sobre-mobile { display: block; }
   .sobre-mobile:hover {
     box-shadow: 0 5px 14px 0px rgba(0, 0, 0, .6);
-    opacity: 85%;
   }
   
       /* 2) Serviços */
@@ -486,7 +473,6 @@ footer {
   }
 
   .card-servicos p {
-    font-size: .9em;
     font-weight: 400;
     line-height: 3vh;
     margin: 0 auto;
@@ -526,7 +512,6 @@ footer {
   .card-diferenciais p {
     margin: .8vh 6vw;
     padding: 0 10vw;
-    font-size: 1.2;
     font-weight: 500;
     line-height: 4.4vw;
   }
@@ -582,12 +567,9 @@ footer {
   #logo-fb-footer img { width: 7vw; height: auto; }
   #logo-linkedin-footer img { width: 7vw; height: auto; }
   #email-footer img { width: 3.5vw; height: auto; }
-  #footer-data-2 { font-size: 2em; }
-  .footer-endereco { font-size: 1.6em; }
-  .footer-endereco:nth-of-type(2) { margin-left: 2.2vw; }
+  #footer-data-2 { font-size: 2vh; }
   #phone-footer img { width: 3.5vw; height: auto; }
   #address-footer img { width: 4.5vw; height: auto; }
-
   #footer-data-text { display: none; }
   #footer-data-text-mobile { display: block; font-size: .8em; }
 
@@ -598,61 +580,17 @@ footer {
     width: auto;
   }
 
-  #footer-form form { padding: 2vh 3vw; margin: 0; font-size: 2.4em;}
-  #footer-form input { padding: 3vh 2vw; }
-  #footer-form button { padding: 3vh 3vw; font-size: 1.2em; }
-  #footer-form textarea { font-size: .52em; }
+  #footer-form form { padding: 2vh 3vw; margin: 0; }
+  #footer-form input { padding: 3vh 2vw; font-size: 2.4vh; }
+  #footer-form button { padding: 3vh 3vw; font-size: 3vh; }
 }
 
-/* Modo retrato em navegadores */
-@media screen and ( orientation: portrait ) and ( min-width: 500px ) 
-and ( max-width: 768px ) {
-  header {
-    min-height: fit-content;
-    height: 100vh;
-    max-height: max-content;
-  }
-
-  #footer-data-2 { font-size: 1em; }
-  .footer-endereco { font-size: .8em; }
-  #footer-data-text-mobile { font-size: .9em; }
-
-  #footer-form form { padding: 2vh 3vw; margin: 0; font-size: 2.4em;}
-  #footer-form input { padding: 3vh 2vw; font-size: .5em; }
-  #footer-form button { padding: 3vh 3vw; font-size: .5em; }
-  #footer-form textarea { font-size: .52em; }
-}  
-
-/* Ajustes modo Portrait / high resolution tablets ( iPad, iPad Pro ) */
-@media screen and ( orientation: portrait) and ( min-width: 768px ) {
+/* Ajuste para modo Landscape em smartphones */
+@media screen and ( orientation: landscape ) and ( min-height: 275px )
+and ( max-height: 415px ) {
   body { background-image: none; }
-  
+
   header { min-height: 100vh; height: max-content; }
-
-  .logo-mobile {
-    position: absolute;
-    top: 5.4vh;
-  }
-
-  #sobre { height: max-content; }
-  #sobre { font-size: 2em; }
-
-  #servicos { padding: 2vh 5vw; font-size: 2em; }
-  .card-servicos { width: 75vw; margin: 3.5vh auto; }
-  .card-servicos h1 { font-size: .93em; }
-  #diferenciais { font-size: 2.2em; }
-  .card-diferenciais img { height: 10vh; }
-
-  #footer-data-text-mobile p { font-size: 1.4em; }
-  #footer-form textarea { font-size: 1.2em; }
-}
-
-/* Ajuste para modo paisagem em smart phones */
-@media screen and ( orientation: landscape ) and ( max-height: 650px ), 
-screen and ( orientation: landscape ) and ( max-width: 415px ) {
-  body { background-image: none; }
-
-  header { height: max-content; }
 
   #header-content {
     display: block;
@@ -676,13 +614,14 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     height: max-content;
     margin: 0 auto;
   }
+
   #content h1 { margin: 9vh 0 5vh 5vw; }
   
       /* 1) Sobre */
   #sobre { height: max-content; width: auto; }
 
   .sobre-mobile {
-    width: 80vw;
+    width: auto;
     height: max-content;
     margin: 3vh auto;
   }
@@ -691,7 +630,6 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
   .sobre-mobile { display: block; }
   .sobre-mobile:hover {
     box-shadow: 0 5px 14px 0px rgba(0, 0, 0, .6);
-    opacity: 85%;
   }
   
       /* 2) Serviços */
@@ -699,6 +637,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
   #servicos-itens { display: block; margin: 0 auto; }
   
   .card-servicos {
+    display: block;
     margin: 4vh 6vw;
     width: auto;
     height: max-content;
@@ -748,7 +687,7 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
   .card-diferenciais p {
     margin: .8vh 6vw;
     padding: 0 10vw;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 500;
     line-height: 3vw;
   }
@@ -773,9 +712,57 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
       rgba(0, 0, 0, 0.7)
     ), url("images/mobile/s4\ ft3.png");
   }
+
+  .footer-endereco { font-size: .9em; }
 }
 
-/* Ajuste para iPad Pro em modo Paisagem */
+@media screen ( orientation: portrait ) and ( max-width: 415px ) {
+  #footer-endereco-1, #footer-endereco-2 { font-size: 1.6em; }
+  /* #input1, #input2, #input3 { font-size: 2em; } */
+
+}
+
+/* Modo retrato em navegadores */
+@media screen and ( orientation: portrait ) and ( min-width: 500px ) 
+and ( max-width: 768px ) {
+  header { min-height: 100vh; max-height: fit-content}
+  #header-content { height: fit-content; }
+
+  .footer-endereco { font-size: .8em; }
+  #footer-data-text-mobile { font-size: .9em; }
+
+  #footer-form form { padding: 2vh 3vw; margin: 0; font-size: 2.4em;}
+  #footer-form input { padding: 3vh 2vw; font-size: .5em; }
+  #footer-form button { padding: 3vh 3vw; font-size: .5em; }
+  #footer-form textarea { font-size: .52em; }
+}  
+
+/* Ajustes modo Portrait / high resolution tablets ( iPad, iPad Pro ) */
+@media screen and ( orientation: portrait) and ( min-width: 768px ) {
+  body { background-image: none; }
+  
+  header { min-height: 100vh; height: max-content; }
+
+  .logo-mobile {
+    position: absolute;
+    top: 5.4vh;
+  }
+
+  #sobre { height: max-content; }
+  #sobre { font-size: 2em; }
+
+  #servicos { padding: 2vh 5vw; font-size: 2em; }
+  .card-servicos { width: 75vw; margin: 3.5vh auto; }
+  .card-servicos h1 { font-size: .93em; }
+  #diferenciais { font-size: 2.2em; }
+  .card-diferenciais img { height: 10vh; }
+
+  #footer-data-text-mobile p { font-size: 1.4em; }
+  #footer-form input { font-size: 1.4e,; }
+  #footer-form textarea { font-size: 1.2em; }
+}
+
+/* Ajuste para iPad/iPad Pro em modo Landscape */
 @media screen and ( orientation: landscape ) and ( min-width: 1024px ) {
 
   #hamitems a { 
@@ -802,3 +789,6 @@ screen and ( orientation: landscape ) and ( max-width: 415px ) {
     max-height: fit-content;
   }
 }
+
+/* Sobrescrever formatação de hyperlinks */
+a, a:-webkit-any-link, a:-moz-any-link { text-decoration: none; color: inherit; }
